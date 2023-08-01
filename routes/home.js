@@ -1,17 +1,21 @@
 const express= require("express");
+const {
+    leerUrls,
+    agregarUrl,
+    eliminarUrl,
+    editarUrlForm,
+    editarUrl,
+    redireccionamiento,
+}= require("../controlers/homeController");
+const urlValidar = require("../middlewares/urlValida");
+
 const router= express.Router();
 
-router.get("/", (req,res) => {
-    const urls= [
-        {origin: "www.google.com/bluuweb1", shortURL: "jsajdasj1"},
-        {origin: "www.google.com/bluuweb2", shortURL: "jsajdasj2"},
-        {origin: "www.google.com/bluuweb3", shortURL: "jsajdasj3"},
-        {origin: "www.google.com/bluuweb4", shortURL: "jsajdasj4"},
-    ];
-    res.render("home", {urls: urls});
-});
-
-
-
+router.get("/", leerUrls);
+router.post("/",urlValidar, agregarUrl);
+router.get("/eliminar/:id", eliminarUrl);
+router.get("/editar/:id", editarUrlForm)
+router.post("/editar/:id",urlValidar, editarUrl);
+router.get("/:shortURL", redireccionamiento)
 
 module.exports = router;
