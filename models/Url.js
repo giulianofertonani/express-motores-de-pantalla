@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-
 const { Schema } = mongoose;
 
     const urlSchema = new Schema({
@@ -11,6 +10,11 @@ const { Schema } = mongoose;
         shortURL: {
             type : String,
             unique: true,
+            required: true,
+        },
+        user: {
+            type: Schema.Types.ObjectId,
+            ref: "User",
             required: true,
         },
     });
