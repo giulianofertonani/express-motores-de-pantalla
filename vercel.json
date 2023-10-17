@@ -9,16 +9,9 @@
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "/",
-        "methods": ["GET", "POST"], 
-        "headers": {
-          "Cache-Control": "maxAge: 30 * 24 * 60 * 60 * 1000" 
-        },
-        "options": {
-          "timeout": 300 
-        }
+        "dest": "index.js"
       }
     ]
-  }
+}
   
   
