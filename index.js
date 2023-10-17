@@ -30,11 +30,11 @@ app.use(
         name: "session-user",
         store: MongoStore.create({
             clientPromise: clientDB,
-            dbName: procces.env.DBNAME
+            dbName: process.env.DBNAME,
         }),
         cookie: {
-            secure: procces.env.MODO === "production", 
-            maxAge: 30 * 24 * 60 * 60 * 1000
+            secure: process.env.MODO === "production", 
+            maxAge: 30 * 24 * 60 * 60 * 1000,
         },
     })
 );
@@ -91,6 +91,6 @@ app.use((req, res, next)=>{
 app.use("/", require("./routes/home"));
 app.use("/auth", require("./routes/auth"));
 
-const PORT= process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Servidor en puerto ` + PORT));
+const port= process.env.PORT || 5000;
+app.listen(port, () => console.log(`Servidor en puerto ` + port));
 
