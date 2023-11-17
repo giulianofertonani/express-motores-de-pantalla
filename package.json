@@ -7,6 +7,10 @@
     "dev": "nodemon index.js",
     "start": "node index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/giulianofertonani/express-motores-de-pantalla"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {

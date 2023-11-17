@@ -33,7 +33,7 @@ const registerUser = async (req,res) =>{
             host: "sandbox.smtp.mailtrap.io",
             port: 2525,
             auth: {
-              user: process.env.USERMAIL,
+              user: process.env.USEREMAIL,
               pass: process.env.PASSEMAIL,
             }
           });
