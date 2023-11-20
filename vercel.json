@@ -1,8 +1,11 @@
 {
-   
+   "builds": [
+    {
+      "src": "/index.js"
+    }
+  ], 
   
     "routes": [
-       { "src": "/index.js", "dest": "/(.*)" },
       {
         "src": "/auth/(.*)",    
         "dest": "/routes/auth"
