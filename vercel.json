@@ -1,15 +1,20 @@
 {
-   "builds": [
+  "builds": [
     {
-      "src": "/index.js"
+      "src": "/index.js",
+      "use": "@vercel/node"
     }
   ], 
   
-    "routes": [
-      {
-        "src": "/auth/(.*)",    
-        "dest": "/routes/auth"
-      }
-    ]
-  }
+  "routes": [
+    {
+      "src": "./routes/(.*)",    
+      "dest": "/auth/$1"
+    },
+    {
+      "src": "./routes/(.*)",
+      "dest": "/home/$1"
+    }
+  ]
+}
   
