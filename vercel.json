@@ -1,13 +1,7 @@
 {
-    
-    
     "rewrites": [
       {
         "src": "/auth/(.*)",    
-        "dest": "/routes"
-      },
-      {
-        "src": "/home/(.*)",
         "dest": "/routes"
       }
     ]
