@@ -2,7 +2,7 @@
     "rewrites": [
       {
         "src": "/auth/(.*)",    
-        "dest": "/routes"
+        "dest": "/auth"
       }
     ]
   }
