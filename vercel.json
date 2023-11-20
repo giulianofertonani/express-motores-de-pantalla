@@ -1,15 +1,24 @@
 {
+  "rewrites":[
+    {
+        "source": "/auth/(.*)",
+        "destination": "/routes"
+    }
+],
+
+
+
     "builds": [
       {
-        "src": "index.js", 
+        "src": "./index.js", 
         "use": "@vercel/node"
       }
-    ],
+    ], 
     
     "routes": [
-      { "src": "/(.*)", "dest": "/" },
+      { "src": "./index.js", "dest": "/(.*)" },
       {
-        "src": "/auth",
+        "src": "/auth/(.*)",
         "dest": "./routes/auth.js"
       },
       {
@@ -18,5 +27,4 @@
       }
     ]
   }
-  
   
