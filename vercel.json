@@ -1,13 +1,4 @@
 {
-  "rewrites":[
-    {
-        "source": "/auth/(.*)",
-        "destination": "/routes"
-    }
-],
-
-
-
     "builds": [
       {
         "src": "./index.js", 
@@ -16,14 +7,13 @@
     ], 
     
     "routes": [
-      { "src": "./index.js", "dest": "/(.*)" },
       {
-        "src": "/auth/(.*)",
-        "dest": "./routes/auth.js"
+        "src": "./routes/auth.js",
+        "dest": "/auth/(.*)"
       },
       {
-        "src": "/(.*)",
-        "dest": "./routes/home.js"
+        "src": "./routes/home.js",
+        "dest": "/(.*)"
       }
     ]
   }
