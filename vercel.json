@@ -8,8 +8,8 @@
     
     "routes": [
       {
-        "src": "./routes/auth.js",
-        "dest": "/auth"
+        "src": "./routes/auth.js",    
+        "dest": "/auth/(.*)"
       },
       {
         "src": "./routes/home.js",
